@@ -3,7 +3,7 @@
     $first_name=$_POST['first_name'];
     $last_name=$_POST['last_name'];
     $email=$_POST['email'];
-    $pass=$_POST['password'];
+    $pass=$_POST['passwords'];
     $sql="insert into users(first_name,last_name,email,password)
     VALUES('$first_name','$last_name','$email','$pass')";
     if($conn->query($sql)===TRUE){ //User has been created successfully
