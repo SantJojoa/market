@@ -19,6 +19,19 @@
         <?php
             $sql="SELECT * from users";
             $result=$conn->query($sql);
+            if($result->num_rows > 0){
+                while($row=$result->fetch_assoc()){
+                    echo"<tr>
+                            <td>".$row['first_name']."</td>
+                            <td>".$row['last_name']."</td>
+                            <td>".$row['email']."</td>
+                            <td><a href='edit_user.php?id=".$row['id']."'><img src='../../front/icons/update.png.png'  width=30px></a> &nbsp;
+                                <a href='delate_user.php?id=".$row['id']."'><img src='../../front/icons/delate.png.png' width=30px></a></td>
+                        </tr>";
+
+                } 
+                
+            }
         ?>
     </table>
 </body>
